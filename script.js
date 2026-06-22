@@ -1,5 +1,5 @@
-﻿const WHATSAPP_NUMBER = "5599999999999";
-const INSTAGRAM_HANDLE = "vestiarioghost3";
+﻿const WHATSAPP_NUMBER = "5534992831321";
+const INSTAGRAM_HANDLE = "vestiariodaghost3";
 const INSTAGRAM_URL = `https://www.instagram.com/${INSTAGRAM_HANDLE}/`;
 const PRODUCTS_STORAGE_KEY = "ghost_products_admin";
 const ADMIN_SESSION_KEY = "ghost_admin_logged";
