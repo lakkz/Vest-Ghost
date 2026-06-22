@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Vestiário da Ghost: catálogo de camisas de futebol, seleções, clubes e artigos esportivos com envio para todo Brasil e atendimento pelo WhatsApp." />
+  <meta name="keywords" content="camisas de futebol, artigos esportivos, Vestiário da Ghost, camisa Brasil, camisa de clubes, pronta entrega" />
+  <meta name="author" content="Vestiário da Ghost" />
+  <meta property="og:title" content="Vestiário da Ghost | Catálogo Esportivo" />
+  <meta property="og:description" content="Escolha seu manto, filtre por categoria, tamanho e preço, e finalize pelo WhatsApp." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/produtos/camisa-brasil-home.jpg" />
+  <meta name="theme-color" content="#111111" />
+  <title>Vestiário da Ghost | Catálogo Esportivo</title>
+  <link rel="canonical" href="./" />
+  <link rel="stylesheet" href="style.css?v=14" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Store","name":"Vestiário da Ghost","description":"Artigos esportivos, camisas de futebol e produtos de pronta entrega.","areaServed":"BR","sameAs":["https://www.instagram.com/vestiarioghost3/"]}</script>
+</head>
+<body>
+  <header class="header">
+    <a href="index.html#inicio" class="logo logo-image" aria-label="Vestiário da Ghost"><img src="assets/vestiario_ghost_transparente.png" alt="Vestiário da Ghost" /></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">☰</button>
+    <nav class="nav" id="navMenu" aria-label="Menu principal">
+      <a href="#inicio">Início</a>
+      <button class="nav-category active" type="button" data-category="Todos">Todos</button>
+      <button class="nav-category" type="button" data-category="Clubes">Clubes</button>
+      <button class="nav-category" type="button" data-category="Seleções">Seleções</button>
+      <button class="nav-category" type="button" data-category="Brasil">Brasil</button>
+      <a href="#sobre">Sobre</a>
+      <button class="nav-category" type="button" data-category="Acessórios">Acessórios</button>
+      <button class="nav-category" type="button" data-category="Promoções">Promoções</button>
+      <a href="#instagram" class="contact-nav-link">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero reveal" id="inicio">
+      <div class="hero-content">
+        <p class="eyebrow">Catálogo esportivo de pronta escolha</p>
+        <h1>O manto certo começa aqui.</h1>
+        <p>Camisas, modelos especiais e artigos esportivos para quem vive futebol dentro e fora de campo.</p>
+        <div class="hero-buttons">
+          <a href="#catalogo" class="btn primary">Ver catálogo</a>
+          <a href="#" class="btn secondary" id="heroWhatsapp">Comprar pelo WhatsApp</a>
+        </div>
+      </div>
+      <div class="hero-showcase ghost-seal-bg" aria-label="Destaque do catálogo">
+        <div class="showcase-image"><img src="assets/produtos/camisa-brasil-home.jpg" alt="Camisa esportiva em destaque" data-fallback="VG" /></div>
+        <div class="showcase-copy">
+          <small>Destaque da semana</small>
+          <strong>Camisas especiais, clubes e seleções</strong>
+          <span>Catálogo organizado para escolher rápido e chamar no WhatsApp com tudo pronto.</span>
+        </div>
+      </div>
+      <div class="trust-row" aria-label="Provas sociais">
+        <div><strong>+4.233</strong><span>clientes satisfeitos</span></div>
+        <div><strong>Brasil</strong><span>envio para todo Brasil</span></div>
+        <div><strong>Pronta</strong><span>entrega disponível</span></div>
+        <div><strong>WhatsApp</strong><span>atendimento direto</span></div>
+      </div>
+    </section>
+
+    <section class="catalog-section reveal" id="catalogo">
+      <div class="section-title"><p class="eyebrow">Catálogo</p><h2>Escolha por categoria, tamanho ou preço.</h2><p>Use os filtros para encontrar modelos por nome, tipo de produto e faixa de preço. A compra continua direta pelo WhatsApp.</p></div>
+      <div class="filters">
+        <div class="input-box"><label for="searchInput">Buscar produto</label><input type="text" id="searchInput" placeholder="Ex: Brasil, Real Madrid, PSG..." /></div>
+        <div class="input-box"><label for="sizeFilter">Tamanho</label><select id="sizeFilter"><option value="Todos">Todos</option><option value="P">P</option><option value="M">M</option><option value="G">G</option><option value="GG">GG</option><option value="XG">XG</option><option value="Único">Único</option></select></div>
+        <div class="input-box"><label for="priceFilter">Preço até</label><select id="priceFilter"><option value="Todos">Todos</option><option value="100">R$ 100</option><option value="150">R$ 150</option><option value="200">R$ 200</option><option value="250">R$ 250</option></select></div>
+        <div class="input-box"><label for="statusFilter">Disponibilidade</label><select id="statusFilter"><option value="Todos">Todos</option><option value="Pronta entrega">Pronta entrega</option><option value="Consultar">Consultar</option></select></div>
+        <button class="clear-btn" id="clearFilters">Limpar filtros</button>
+      </div>
+      <div class="products-grid" id="productsGrid" aria-live="polite"></div>
+    </section>
+
+    <section class="delivery-section reveal" id="pronta-entrega"><div class="delivery-card"><p class="eyebrow">Compra simples</p><h2>Produto organizado vende mais rápido.</h2><p>O cliente não precisa ficar perdido no feed procurando modelo, tamanho e disponibilidade. No catálogo, tudo fica claro antes da conversa.</p><div class="delivery-list"><div><strong>01</strong><span>Cliente encontra o produto.</span></div><div><strong>02</strong><span>Escolhe o tamanho disponível.</span></div><div><strong>03</strong><span>Chama no WhatsApp com mensagem pronta.</span></div></div></div></section>
+
+    <section class="contact-section ghost-contact reveal" id="instagram">
+      <div class="ghost-contact-bg" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="contact-logo-badge" aria-hidden="true"><img src="assets/vestiario_ghost_transparente_full.png" alt="" /></div><div class="section-title"><p class="eyebrow">Contato da loja</p><h2>Chama a Ghost no Instagram ou WhatsApp.</h2><p>Escolha o canal, veja novidades no perfil e fale direto com a loja para confirmar produto, tamanho, valor e envio.</p></div>
+      <div class="contact-panel ghost-contact-panel">
+        <a href="https://www.instagram.com/vestiariodaghost3/" target="_blank" rel="noopener" class="contact-card instagram-card" id="instagramLink" aria-label="Abrir Instagram da Vestiário da Ghost">
+          <span class="contact-icon ghost-instagram" aria-hidden="true"></span>
+          <small>Instagram</small>
+          <strong>@vestiariodaghost3</strong>
+          <em>Novidades, reposições, fotos reais e pronta entrega nos stories.</em>
+        </a>
+        <a href="#" class="contact-card whatsapp-card" id="contactWhatsapp" aria-label="Comprar pelo WhatsApp">
+          <span class="contact-icon ghost-whatsapp" aria-hidden="true"></span>
+          <small>WhatsApp</small>
+          <strong>Atendimento direto</strong>
+          <em>Mensagem pronta para consultar produto, tamanho, valor e envio.</em>
+        </a>
+      </div>
+    </section>
+    <section class="about-section reveal" id="sobre"><div class="about-text"><p class="eyebrow">Quem somos</p><h2>Somos o Vestiário da Ghost.</h2><p>Loja especializada em camisas importadas de clubes e seleções, com variedade para torcedores que amam e praticam esporte.</p><p>Facilitamos a importação de artigos esportivos para que o cliente tenha um produto de qualidade com preço justo.</p><p>Nossa missão é oferecer boas opções, atendimento personalizado e compromisso com a satisfação dos clientes.</p></div><div class="about-stats ghost-info-stack"><div><strong>Clubes</strong><span>camisas importadas e modelos especiais</span></div><div><strong>Seleções</strong><span>variedade para torcer dentro e fora de campo</span></div><div><strong>Entrega</strong><span>produto embalado com cuidado e carinho</span></div></div></section>
+    <section class="faq-section reveal" id="faq"><div class="section-title"><p class="eyebrow">Dúvidas frequentes</p><h2>Antes de chamar, o cliente já entende o básico.</h2></div><div class="faq-grid"><details><summary>Como funciona a compra?</summary><p>Você escolhe o produto no catálogo e clica em comprar pelo WhatsApp. A mensagem já vai pronta para confirmar disponibilidade e pagamento.</p></details><details><summary>Tem pronta entrega?</summary><p>Alguns produtos ficam marcados como pronta entrega. Outros podem precisar de confirmação no atendimento.</p></details><details><summary>Envia para todo Brasil?</summary><p>Sim. O envio pode ser combinado diretamente pelo WhatsApp com a loja.</p></details><details><summary>Como vejo os tamanhos?</summary><p>Cada produto mostra os tamanhos disponíveis. Caso tenha dúvida, o atendimento confirma antes da compra.</p></details><details><summary>Como confirmo disponibilidade?</summary><p>Clique em comprar pelo WhatsApp. A mensagem automática já leva produto, categoria, tamanho e status para agilizar a confirmação.</p></details><details><summary>Quais formas de pagamento?</summary><p>As formas de pagamento são confirmadas diretamente no atendimento, junto com disponibilidade e envio.</p></details></div></section>
+
+    <section class="cta-section reveal"><p class="eyebrow">Atendimento rápido</p><h2>Achou seu manto?</h2><p>Chame no WhatsApp e confira disponibilidade, tamanho, valor e envio.</p><a href="#" class="btn primary" id="ctaWhatsapp">Comprar pelo WhatsApp</a></section>
+  </main>
+
+  <footer class="footer"><div><a href="index.html#inicio" class="logo"><span>Vestiário</span> Ghost</a><p>Artigos esportivos com envio para todo Brasil.</p><small>Catálogo profissional com atendimento via WhatsApp.</small></div><div class="footer-links"><a href="#catalogo">Catálogo</a><a href="#instagram">Instagram</a><a href="#sobre">Sobre</a><a href="#" id="footerWhatsapp">WhatsApp</a><span>Envio para todo Brasil</span><button class="admin-link" id="adminToggle">Admin</button></div></footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="admin-panel" id="adminPanel" aria-hidden="true"></div>
+  <div class="page-transition" aria-hidden="true"></div>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

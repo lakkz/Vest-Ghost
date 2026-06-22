@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Produto da Vestiário da Ghost com preço, tamanhos, disponibilidade e compra pelo WhatsApp." />
+  <meta property="og:title" content="Produto | Vestiário da Ghost" />
+  <meta property="og:description" content="Veja detalhes do produto e finalize pelo WhatsApp." />
+  <meta property="og:type" content="product" />
+  <meta name="theme-color" content="#111111" />
+  <title>Produto | Vestiário da Ghost</title>
+  <link rel="stylesheet" href="style.css?v=14" />
+  <script type="application/ld+json" id="productSchema"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="index.html#inicio" class="logo logo-image" aria-label="Vestiário da Ghost"><img src="assets/vestiario_ghost_transparente.png" alt="Vestiário da Ghost" /></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">☰</button>
+    <nav class="nav" id="navMenu" aria-label="Menu principal">
+      <a href="index.html#inicio">Início</a>
+      <a href="index.html#catalogo">Catálogo</a>
+      <a href="index.html#instagram" class="contact-nav-link">Contato</a>
+      <a href="index.html#sobre">Sobre</a>
+      <a href="index.html#faq">Dúvidas</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="product-ghost-strip" aria-label="Vestiário da Ghost">
+      <div class="strip-logo"><img src="assets/vestiario_ghost_transparente_full.png" alt="Vestiário da Ghost" /></div>
+      <div class="strip-marquee"><span>Camisas importadas</span><span>Personalização disponível</span><span>Atendimento via WhatsApp</span><span>Envio para todo Brasil</span></div>
+      <div class="strip-ghosts" aria-hidden="true"><i></i><i></i><i></i></div>
+    </section>
+    <section class="product-detail-section reveal visible" id="productDetail" aria-live="polite"></section>
+    <section class="cta-section reveal visible">
+      <p class="eyebrow">Atendimento rápido</p>
+      <h2>Quer confirmar disponibilidade?</h2>
+      <p>Chame no WhatsApp para conferir tamanho, pagamento e envio.</p>
+      <a href="#" class="btn primary" id="ctaWhatsapp">Comprar pelo WhatsApp</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div><a href="index.html#inicio" class="logo"><span>Vestiário</span> Ghost</a><p>Artigos esportivos com envio para todo Brasil.</p></div>
+    <div class="footer-links"><a href="index.html#catalogo">Catálogo</a><a href="https://www.instagram.com/vestiariodaghost3/" target="_blank" rel="noopener">Instagram</a><a href="#" id="footerWhatsapp">WhatsApp</a><span>Envio para todo Brasil</span><button class="admin-link" id="adminToggle">Admin</button></div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="admin-panel" id="adminPanel" aria-hidden="true"></div>
+  <div class="page-transition" aria-hidden="true"></div>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
