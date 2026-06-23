@@ -5,26 +5,34 @@ const PRODUCTS_STORAGE_KEY = "ghost_products_admin";
 const ADMIN_SESSION_KEY = "ghost_admin_logged";
 const ADMIN_PASSWORD = "ghost123";
 
+
 const fallbackProducts = [
     {
-        "id":  1,
-        "slug":  "camisa-brasil-home",
-        "name":  "Camisa Brasil Home",
-        "category":  "Brasil",
-        "description":  "Modelo inspirado na seleção brasileira, ideal para coleção e uso casual.",
-        "sizes":  [
-                      "P",
-                      "M",
-                      "G",
-                      "GG"
-                  ],
-        "status":  "Pronta entrega",
-        "price":  149.9,
-        "oldPrice":  189.9,
-        "promo":  true,
-        "code":  "BR",
-        "image":  "assets/produtos/camisa-brasil-home.jpg"
-    },
+  "id": 1,
+  "slug": "camisa-brasil-home",
+  "name": "Camisa Brasil Home",
+  "category": "Brasil",
+  "description": "Modelo inspirado na seleção brasileira, ideal para coleção e uso casual.",
+  "sizes": [
+    "P",
+    "M",
+    "G",
+    "GG"
+  ],
+  "status": "Pronta entrega",
+  "price": 149.9,
+  "oldPrice": 189.9,
+  "promo": true,
+  "code": "BR",
+  "image": "assets/produtos/camisa-brasil-home-frente.jpg",
+  "images": [
+    "assets/produtos/camisa-brasil-home-frente.jpg",
+    "assets/produtos/camisa-brasil-home-costas-lisa.jpg",
+    "assets/produtos/camisa-brasil-home-costas-personalizada.jpg",
+    "assets/produtos/camisa-brasil-home-detalhe-tecido.jpg",
+    "assets/produtos/camisa-brasil-home-etiqueta-tamanho.jpg"
+  ]
+},
     {
         "id":  2,
         "slug":  "camisa-argentina-away",
@@ -41,7 +49,15 @@ const fallbackProducts = [
         "oldPrice":  null,
         "promo":  false,
         "code":  "AR",
-        "image":  "assets/produtos/camisa-argentina-away.jpg"
+        "image":  "assets/produtos/camisa-argentina-frente.jpg",
+        "images": [
+  "assets/produtos/camisa-argentina-frente.jpg",
+  "assets/produtos/camisa-argentina-costas-lisa.jpg",
+  "assets/produtos/camisa-argentina-costas-personalizada.jpg",
+  "assets/produtos/camisa-argentina-detalhe-tecido-escudo.jpg",
+  "assets/produtos/camisa-argentina-etiqueta-acabamento.jpg"
+]
+
     },
     {
         "id":  3,
@@ -2284,6 +2300,7 @@ let selectedSize = "Todos";
 let selectedPrice = "Todos";
 let selectedStatus = "Todos";
 let searchTerm = "";
+let selectedSort = "recent";
 let adminSearchTerm = "";
 
 const money = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
@@ -2437,10 +2454,51 @@ function productMatchesFilters(product) {
   return matchCategory && matchStatus && matchSize && matchPrice && matchSearch;
 }
 
+function sortProductsList(list) {
+  const sorted = [...list];
+
+  if (selectedSort === "recent") {
+    return sorted.sort((a, b) => b.id - a.id);
+  }
+
+  if (selectedSort === "az") {
+    return sorted.sort((a, b) => a.name.localeCompare(b.name));
+  }
+
+  if (selectedSort === "za") {
+    return sorted.sort((a, b) => b.name.localeCompare(a.name));
+  }
+
+  if (selectedSort === "price-low") {
+    return sorted.sort((a, b) => Number(a.price || 0) - Number(b.price || 0));
+  }
+
+  if (selectedSort === "price-high") {
+    return sorted.sort((a, b) => Number(b.price || 0) - Number(a.price || 0));
+  }
+
+  if (selectedSort === "promo") {
+    return sorted.sort((a, b) => Number(b.promo) - Number(a.promo));
+  }
+
+  if (selectedSort === "available") {
+    return sorted.sort((a, b) => {
+      const aAvailable = a.status === "Pronta entrega" ? 1 : 0;
+      const bAvailable = b.status === "Pronta entrega" ? 1 : 0;
+
+      return bAvailable - aAvailable;
+    });
+  }
+
+  return sorted;
+}
+
 function renderProducts() {
   const productsGrid = byId("productsGrid");
   if (!productsGrid) return;
-  const filteredProducts = products.filter(productMatchesFilters);
+  const filteredProducts = sortProductsList(
+  products.filter(productMatchesFilters)
+);
   productsGrid.innerHTML = "";
 
   if (!filteredProducts.length) {
@@ -2506,11 +2564,32 @@ function renderProductPage() {
   const customDetail = customizable ? `<span>Personalizável: nome e número</span>` : "";
   const customDetailOption = customizable ? `<label class="custom-option detail-custom"><input type="checkbox" id="detailCustom" /> Quero personalizar nome e número</label>` : "";
 
+  const productImages = Array.isArray(product.images) && product.images.length
+  ? product.images
+  : [product.image];
+
+const carouselThumbs = productImages.map((image, index) => `
+  <button class="carousel-thumb ${index === 0 ? "active" : ""}" type="button" data-index="${index}">
+    <img src="${escapeHtml(image)}" alt="${escapeHtml(product.name)} foto ${index + 1}" />
+  </button>
+`).join("");
+
   detail.innerHTML = `
     <div class="product-detail-image">
-      ${promo}
-        <img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)}" />
-    </div>
+  ${promo}
+
+  <div class="product-carousel">
+    <button class="carousel-arrow carousel-prev" type="button" aria-label="Imagem anterior">‹</button>
+
+    <img id="carouselMainImage" src="${escapeHtml(productImages[0])}" alt="${escapeHtml(product.name)}" />
+
+    <button class="carousel-arrow carousel-next" type="button" aria-label="Próxima imagem">›</button>
+  </div>
+
+  <div class="carousel-thumbs">
+    ${carouselThumbs}
+  </div>
+</div>
     <div class="product-detail-info">
       <span class="tag">${escapeHtml(product.category)}</span>
       <h1>${escapeHtml(product.name)}</h1>
@@ -2525,6 +2604,56 @@ function renderProductPage() {
     </div>`;
 
   detail.querySelector("img").addEventListener("error", (event) => handleImageError(event.currentTarget, product.code));
+
+  let currentCarouselIndex = 0;
+
+const carouselMainImage = byId("carouselMainImage");
+const carouselPrev = detail.querySelector(".carousel-prev");
+const carouselNext = detail.querySelector(".carousel-next");
+const carouselThumbButtons = detail.querySelectorAll(".carousel-thumb");
+
+function updateCarousel(index) {
+  if (!carouselMainImage || !productImages.length) return;
+
+  currentCarouselIndex = index;
+
+  if (currentCarouselIndex < 0) {
+    currentCarouselIndex = productImages.length - 1;
+  }
+
+  if (currentCarouselIndex >= productImages.length) {
+    currentCarouselIndex = 0;
+  }
+
+  carouselMainImage.src = productImages[currentCarouselIndex];
+
+  carouselThumbButtons.forEach((button) => {
+    button.classList.toggle(
+      "active",
+      Number(button.dataset.index) === currentCarouselIndex
+    );
+  });
+}
+
+carouselPrev?.addEventListener("click", () => {
+  updateCarousel(currentCarouselIndex - 1);
+});
+
+carouselNext?.addEventListener("click", () => {
+  updateCarousel(currentCarouselIndex + 1);
+});
+
+carouselThumbButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    updateCarousel(Number(button.dataset.index));
+  });
+});
+
+if (productImages.length <= 1) {
+  carouselPrev?.remove();
+  carouselNext?.remove();
+}
+
   byId("detailBuy").addEventListener("click", () => openWhatsapp(getProductWhatsappMessage(product, byId("detailSize").value, Boolean(byId("detailCustom")?.checked))));
   byId("availabilityCheck")?.addEventListener("click", () => openWhatsapp(getAvailabilityMessage(product)));
   byId("detailCopy").addEventListener("click", () => copyText(window.location.href));
@@ -2841,6 +2970,10 @@ function bindGlobalEvents() {
 
   byId("searchInput")?.addEventListener("input", (event) => { searchTerm = event.target.value.trim(); renderProducts(); });
   byId("sizeFilter")?.addEventListener("change", (event) => { selectedSize = event.target.value; renderProducts(); });
+  byId("sortFilter")?.addEventListener("change", (event) => {
+  selectedSort = event.target.value;
+  renderProducts();
+});
   byId("priceFilter")?.addEventListener("change", (event) => { selectedPrice = event.target.value; renderProducts(); });
   byId("statusFilter")?.addEventListener("change", (event) => { selectedStatus = event.target.value; renderProducts(); });
   byId("clearFilters")?.addEventListener("click", () => {
@@ -2854,6 +2987,11 @@ function bindGlobalEvents() {
     if (byId("statusFilter")) byId("statusFilter").value = "Todos";
     document.querySelectorAll(".nav-category, .category-pill, .category-card").forEach((btn) => btn.classList.toggle("active", btn.dataset.category === "Todos"));
     renderProducts();
+    selectedSort = "recent";
+
+if (byId("sortFilter")) {
+  byId("sortFilter").value = "recent";
+}
   });
   document.querySelectorAll("img[data-fallback]").forEach((img) => img.addEventListener("error", (event) => handleImageError(event.currentTarget, img.dataset.fallback)));
 }

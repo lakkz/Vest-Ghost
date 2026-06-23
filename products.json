@@ -1,23 +1,30 @@
 ﻿[
     {
-        "id":  1,
-        "slug":  "camisa-brasil-home",
-        "name":  "Camisa Brasil Home",
-        "category":  "Brasil",
-        "description":  "Modelo inspirado na seleção brasileira, ideal para coleção e uso casual.",
-        "sizes":  [
-                      "P",
-                      "M",
-                      "G",
-                      "GG"
-                  ],
-        "status":  "Pronta entrega",
-        "price":  149.9,
-        "oldPrice":  189.9,
-        "promo":  true,
-        "code":  "BR",
-        "image":  "assets/produtos/camisa-brasil-home.jpg"
-    },
+  "id": 1,
+  "slug": "camisa-brasil-home",
+  "name": "Camisa Brasil Home",
+  "category": "Brasil",
+  "description": "Modelo inspirado na seleção brasileira, ideal para coleção e uso casual.",
+  "sizes": [
+    "P",
+    "M",
+    "G",
+    "GG"
+  ],
+  "status": "Pronta entrega",
+  "price": 149.9,
+  "oldPrice": 189.9,
+  "promo": true,
+  "code": "BR",
+  "image": "assets/produtos/camisa-brasil-home-frente.jpg",
+  "images": [
+    "assets/produtos/camisa-brasil-home-frente.jpg",
+    "assets/produtos/camisa-brasil-home-costas-lisa.jpg",
+    "assets/produtos/camisa-brasil-home-costas-personalizada.jpg",
+    "assets/produtos/camisa-brasil-home-detalhe-tecido.jpg",
+    "assets/produtos/camisa-brasil-home-etiqueta-tamanho.jpg"
+  ]
+},
     {
         "id":  2,
         "slug":  "camisa-argentina-away",
@@ -34,7 +41,15 @@
         "oldPrice":  null,
         "promo":  false,
         "code":  "AR",
-        "image":  "assets/produtos/camisa-argentina-away.jpg"
+        "image":  "assets/produtos/camisa-argentina-frente.jpg",
+        "images": [
+  "assets/produtos/camisa-argentina-frente.jpg",
+  "assets/produtos/camisa-argentina-costas-lisa.jpg",
+  "assets/produtos/camisa-argentina-costas-personalizada.jpg",
+  "assets/produtos/camisa-argentina-detalhe-tecido-escudo.jpg",
+  "assets/produtos/camisa-argentina-etiqueta-acabamento.jpg"
+]
+
     },
     {
         "id":  3,
@@ -70,7 +85,15 @@
         "oldPrice":  null,
         "promo":  false,
         "code":  "PSG",
-        "image":  "assets/produtos/camisa-psg.jpg"
+        "image": "assets/produtos/camisa-psg-frente.jpg",
+        "images": [
+  "assets/produtos/camisa-psg-frente.jpg",
+  "assets/produtos/camisa-psg-costas-lisa.jpg",
+  "assets/produtos/camisa-psg-costas-personalizada.jpg",
+  "assets/produtos/camisa-psg-detalhe-tecido-escudo.jpg",
+  "assets/produtos/camisa-psg-etiqueta-acabamento.jpg"
+]
+
     },
     {
         "id":  5,
@@ -1648,25 +1671,27 @@
         "image":  "assets/produtos/camisa-brasil-retro.jpg"
     },
     {
-        "id":  85,
-        "slug":  "camisa-brasil-away-azul",
-        "name":  "Camisa Brasil Away Azul",
-        "category":  "Brasil",
-        "description":  "Modelo esportivo com visual de futebol, ideal para torcer, colecionar e usar no dia a dia.",
-        "sizes":  [
-                      "P",
-                      "M",
-                      "G",
-                      "GG",
-                      "XG"
-                  ],
-        "status":  "Pronta entrega",
-        "price":  139.9,
-        "oldPrice":  null,
-        "promo":  false,
-        "code":  "CAM",
-        "image":  "assets/produtos/camisa-brasil-away-azul.jpg"
-    },
+  "id": 85,
+  "slug": "camisa-brasil-preta-personalizavel",
+  "name": "Camisa Brasil Preta Personalizável",
+  "category": "Brasil",
+  "description": "Camisa Brasil preta com detalhes em azul e amarelo, visual moderno e marcante, com opção de personalização nas costas. Ideal para quem quer um modelo diferenciado para usar, colecionar ou presentear.",
+  "sizes": ["P", "M", "G", "GG"],
+  "status": "Pronta entrega",
+  "price": 149.9,
+  "oldPrice": 189.9,
+  "promo": true,
+  "customizable": true,
+  "code": "BR",
+  "image": "assets/produtos/camisa-brasil-preta-rodrygo-frente.jpg",
+  "images": [
+    "assets/produtos/camisa-brasil-preta-rodrygo-frente.jpg",
+    "assets/produtos/camisa-brasil-preta-rodrygo-costas-lisa.jpg",
+    "assets/produtos/camisa-brasil-preta-rodrygo-costas-personalizada.jpg",
+    "assets/produtos/camisa-brasil-preta-rodrygo-detalhe-tecido-escudo.jpg",
+    "assets/produtos/camisa-brasil-preta-rodrygo-etiqueta-acabamento.jpg"
+  ]
+},
     {
         "id":  86,
         "slug":  "camisa-brasil-amarela-premium",
@@ -2073,21 +2098,27 @@
         "image":  "assets/produtos/meiao-amarelo-pro.jpg"
     },
     {
-        "id":  108,
-        "slug":  "bola-society-premium",
-        "name":  "Bola Society Premium",
-        "category":  "Acessórios",
-        "description":  "Produto esportivo selecionado para completar treino, jogo e rotina com estilo.",
-        "sizes":  [
-                      "Único"
-                  ],
-        "status":  "Consultar",
-        "price":  89.9,
-        "oldPrice":  129.9,
-        "promo":  true,
-        "code":  "BOL",
-        "image":  "assets/produtos/bola-society-premium.jpg"
-    },
+  "id": 108,
+  "slug": "bola-trionda-campo",
+  "name": "Bola Trionda Competition",
+  "category": "Acessórios",
+  "description": "Bola Trionda Competition com visual marcante, acabamento detalhado e estilo inspirado em bolas de grandes competições. Ideal para jogos, treinos, coleção ou para quem quer um modelo diferenciado no campo.",
+  "sizes": ["Único"],
+  "status": "Pronta entrega",
+  "price": 119.9,
+  "oldPrice": 149.9,
+  "promo": true,
+  "customizable": false,
+  "code": "BOL",
+  "image": "assets/produtos/bola-trionda-campo-frente.jpg",
+  "images": [
+    "assets/produtos/bola-trionda-campo-frente.jpg",
+    "assets/produtos/bola-trionda-campo-angulo.jpg",
+    "assets/produtos/bola-trionda-campo-detalhe-textura.jpg",
+    "assets/produtos/bola-trionda-campo-valvula.jpg",
+    "assets/produtos/bola-trionda-campo-uso-gramado.jpg"
+  ]
+},
     {
         "id":  109,
         "slug":  "bola-futsal-premium",
@@ -2105,24 +2136,28 @@
         "image":  "assets/produtos/bola-futsal-premium.jpg"
     },
     {
-        "id":  110,
-        "slug":  "chuteira-society-ghost",
-        "name":  "Chuteira Society Ghost",
-        "category":  "Acessórios",
-        "description":  "Produto esportivo selecionado para completar treino, jogo e rotina com estilo.",
-        "sizes":  [
-                      "P",
-                      "M",
-                      "G",
-                      "GG"
-                  ],
-        "status":  "Pronta entrega",
-        "price":  109.9,
-        "oldPrice":  null,
-        "promo":  false,
-        "code":  "CHU",
-        "image":  "assets/produtos/chuteira-society-ghost.jpg"
-    },
+  "id": 110,
+  "slug": "chuteira-umbro-society",
+  "name": "Chuteira Umbro Society",
+  "category": "Acessórios",
+  "description": "Chuteira Umbro society preta com detalhes em azul claro, visual esportivo e solado emborrachado. Modelo ideal para partidas de society, treinos e uso casual com conforto, estilo e bom acabamento.",
+  "sizes": ["38", "39", "40", "41", "42"],
+  "status": "Pronta entrega",
+  "price": 199.9,
+  "oldPrice": 249.9,
+  "promo": true,
+  "customizable": false,
+  "code": "CH",
+  "image": "assets/produtos/chuteira-umbro-society-lateral-externa.jpg",
+  "images": [
+    "assets/produtos/chuteira-umbro-society-lateral-externa.jpg",
+    "assets/produtos/chuteira-umbro-society-lateral-interna.jpg",
+    "assets/produtos/chuteira-umbro-society-vista-cima.jpg",
+    "assets/produtos/chuteira-umbro-society-solado.jpg",
+    "assets/produtos/chuteira-umbro-society-calcanhar.jpg",
+    "assets/produtos/chuteira-umbro-society-detalhe-material.jpg"
+  ]
+},
     {
         "id":  111,
         "slug":  "camisa-termica-preta",
@@ -2268,5 +2303,54 @@
         "promo":  false,
         "code":  "TOA",
         "image":  "assets/produtos/toalha-esportiva-ghost.jpg"
-    }
+    },
+    {
+        "id":  119,
+        "slug":  "camisa-palmeiras- away",
+        "name":  "Camisa Palmeiras Away",
+        "category":  "Clubes",
+        "description":  "Vista o Verdão com presença. Camisa Palmeiras branca com detalhes em verde e vermelho, tecido leve, visual elegante e opção perfeita para jogo, treino, rolê ou coleção.",
+        "sizes":  [
+                      "M",
+                      "G",
+                      "GG",
+                      "XG"
+                  ],
+        "status":  "Consultar",
+        "price":  159.9,
+        "oldPrice":  null,
+        "promo":  false,
+        "code":  "PAL",
+        "image": "assets/produtos/camisa-palmeiras-frente.jpg",
+        "images": [
+          "assets/produtos/camisa-palmeiras-frente.jpg",
+          "assets/produtos/camisa-palmeiras-costas-lisa.jpg",
+          "assets/produtos/camisa-palmeiras-costas-personalizada.jpg",
+          "assets/produtos/camisa-palmeiras-detalhe-tecido-escudo.jpg",
+  "assets/produtos/camisa-palmeiras-etiqueta-acabamento.jpg"
+]
+    },
+    {
+  "id": 120,
+  "slug": "camisa-brasil-retro-1994",
+  "name": "Camisa Brasil Retrô 1994",
+  "category": "Brasil",
+  "description": "Camisa Brasil Retrô 1994 em amarelo com gola verde e detalhes clássicos que marcaram época. Um modelo icônico para colecionadores, torcedores e fãs das camisas históricas da seleção brasileira.",
+  "sizes": ["P", "M", "G", "GG"],
+  "status": "Pronta entrega",
+  "price": 149.9,
+  "oldPrice": 189.9,
+  "promo": true,
+  "customizable": true,
+  "code": "BR",
+  "image": "assets/produtos/camisa-brasil-retro-1994-frente.jpg",
+  "images": [
+    "assets/produtos/camisa-brasil-retro-1994-frente.jpg",
+    "assets/produtos/camisa-brasil-retro-1994-costas-lisa.jpg",
+    "assets/produtos/camisa-brasil-retro-1994-costas-personalizada.jpg",
+    "assets/produtos/camisa-brasil-retro-1994-detalhe-tecido-escudo.jpg",
+    "assets/produtos/camisa-brasil-retro-1994-etiqueta-acabamento.jpg"
+  ]
+}
+
 ]

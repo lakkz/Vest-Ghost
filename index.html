@@ -63,10 +63,45 @@
     <section class="catalog-section reveal" id="catalogo">
       <div class="section-title"><p class="eyebrow">Catálogo</p><h2>Escolha por categoria, tamanho ou preço.</h2><p>Use os filtros para encontrar modelos por nome, tipo de produto e faixa de preço. A compra continua direta pelo WhatsApp.</p></div>
       <div class="filters">
-        <div class="input-box"><label for="searchInput">Buscar produto</label><input type="text" id="searchInput" placeholder="Ex: Brasil, Real Madrid, PSG..." /></div>
-        <div class="input-box"><label for="sizeFilter">Tamanho</label><select id="sizeFilter"><option value="Todos">Todos</option><option value="P">P</option><option value="M">M</option><option value="G">G</option><option value="GG">GG</option><option value="XG">XG</option><option value="Único">Único</option></select></div>
-        <div class="input-box"><label for="priceFilter">Preço até</label><select id="priceFilter"><option value="Todos">Todos</option><option value="100">R$ 100</option><option value="150">R$ 150</option><option value="200">R$ 200</option><option value="250">R$ 250</option></select></div>
-        <div class="input-box"><label for="statusFilter">Disponibilidade</label><select id="statusFilter"><option value="Todos">Todos</option><option value="Pronta entrega">Pronta entrega</option><option value="Consultar">Consultar</option></select></div>
+        <div class="input-box">
+          <label for="searchInput">Buscar produto</label>
+          <input type="text" id="searchInput" placeholder="Ex: Brasil, Real Madrid, PSG..." />
+        </div>
+        <div class="input-box">
+          <label for="sizeFilter">Tamanho</label>
+          <select id="sizeFilter">
+            <option value="Todos">Todos</option>
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
+            <option value="XG">XG</option>
+            <option value="Único">Único</option>
+          </select>
+        </div>
+        <div class="input-box">
+          <label for="priceFilter">Preço até</label>
+          <select id="priceFilter">
+            <option value="Todos">Todos</option>
+            <option value="100">R$ 100</option>
+            <option value="150">R$ 150</option>
+            <option value="200">R$ 200</option>
+            <option value="250">R$ 250</option>
+          </select>
+        </div>
+
+        <div class="input-box">
+          <label for="sortFilter">Ordenar por</label>
+          <select id="sortFilter" class="filter-select">
+  <option value="recent">Recém adicionados</option>
+  <option value="az">Nome A-Z</option>
+  <option value="za">Nome Z-A</option>
+  <option value="price-low">Menor preço</option>
+  <option value="price-high">Maior preço</option>
+  <option value="promo">Promoções primeiro</option>
+  <option value="available">Pronta entrega primeiro</option>
+</select>
+        </div>
         <button class="clear-btn" id="clearFilters">Limpar filtros</button>
       </div>
       <div class="products-grid" id="productsGrid" aria-live="polite"></div>
